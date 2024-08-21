@@ -5,6 +5,7 @@ import string
 
 root = Tk()
 root.title("Password Generator for CodeSoft")
+
 root.geometry("400x300")
 root.resizable(False, False)
 

@@ -42,7 +42,7 @@ def OpenTaskFile():
         file = open('tasklist.txt', 'w')
         file.close()
 
-heading = Label(root, text="To Do List", font="poppins 20 bold", fg="white", bg="green")
+heading = Label(root, text="To Do List", font="poppins 20 bold", fg="#000080")
 heading.place(x=130, y=20)
 
 frame = Frame(root, width=400, height=50, bg="white")
@@ -70,12 +70,9 @@ scroll.config(command=listitems.yview)
 
 OpenTaskFile()
 
+delete_button = Button(root, text="Delete", font=("Poppins", 20, "bold"), bg="red", fg="white", bd=0, command=deleteTask)
+delete_button.pack(side=BOTTOM, pady=13)
 
-delete_image_path = "images/delete.png"
-try:
-    delete = PhotoImage(file=delete_image_path)
-    Button(root, image=delete, bd=0, command=deleteTask).pack(side=BOTTOM, pady=13)
-except TclError:
-    print(f"Image not found at {delete_image_path}. Please check the file path.")
+
 
 root.mainloop()

@@ -80,9 +80,8 @@ def insert():
 def to_update():
     try:
         tree_data = tree.focus()
-        if not tree_data:
-            raise IndexError
-
+   
+   
         tree_directory = tree.item(tree_data)
         tree_list = tree_directory['values']
 
@@ -119,7 +118,7 @@ def to_update():
             show()
 
         b_confirm = tk.Button(frame2, text="Confirm", width=8, height=1, font="poppins 10", bg="green", fg="white", command=confirm)
-        b_confirm.place(x=390, y=100)
+        b_confirm.place(x=390, y=110)
 
     except IndexError:
         messagebox.showerror('Error', 'Select one of the items from the table')
@@ -186,10 +185,10 @@ view_button = tk.Button(frame2, text="View", width=12, height=1, font="poppins 1
 view_button.place(x=250, y=60)
 
 add_button = tk.Button(frame2, text="Add", width=8, height=1, font="poppins 10", bg="Green", fg="white", command=insert)
-add_button.place(x=390, y=60)
+add_button.place(x=390, y=50)
 
 update_button = tk.Button(frame2, text="Update", width=8, height=1, font="poppins 10", bg="Green", fg="white", command=to_update)
-update_button.place(x=390, y=100)
+update_button.place(x=390, y=80)
 
 delete_button = tk.Button(frame2, text="Delete", width=12, height=1, font="poppins 10", bg="Red", fg="white", command=to_remove)
 delete_button.place(x=250, y=100)
